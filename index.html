@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary My Love! 💖</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Password Protection Overlay -->
+    <div id="password-protection">
+        <div class="password-container">
+            <h2>💖 Anniversary Celebration 💖</h2>
+            <p>Welcome to our special anniversary website! Please enter the password to continue.</p>
+            
+            <input type="password" id="password-input" class="password-input" placeholder="Enter password" autocomplete="off">
+            <button id="password-submit" class="password-submit">Enter</button>
+            
+            <div id="error-message" class="error-message">
+                Incorrect password. Please try again.
+            </div>
+            
+            <div class="hint">
+                Hint: It's our special date (DDMMYYYY format)
+            </div>
+        </div>
+    </div>
+    
+    <!-- Website Content (Hidden until password is correct) -->
+    <div id="website-content">
+        <div class="progress-bar" id="progressBar"></div>
+        
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-logo">💑 Anniversary Magic</div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active" data-page="home">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#messages" class="nav-link" data-page="messages">
+                        <i class="fas fa-heart"></i> Messages
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#gallery" class="nav-link" data-page="gallery">
+                        <i class="fas fa-images"></i> Gallery
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#memories" class="nav-link" data-page="memories">
+                        <i class="fas fa-star"></i> Memories
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#wishes" class="nav-link" data-page="wishes">
+                        <i class="fas fa-gift"></i> Send Wishes
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#themes" class="nav-link" data-page="themes">
+                        <i class="fas fa-palette"></i> Themes
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Countdown Timer (Time Together) -->
+        <div class="countdown-container">
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="years">3</div>
+                    <div class="countdown-label">Years</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="months">36</div>
+                    <div class="countdown-label">Months</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">1095</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">26280</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pages -->
+        <div class="container">
+            <!-- Home Page -->
+            <div class="page active" id="home">
+                <div class="hero">
+                    <h1>Happy Anniversary My Love! 💖💑</h1>
+                    <p>Every year with you feels like a beautiful dream ✨<br>Explore 80 loving messages, memories, and surprises from our journey together!</p>
+                    
+                    <div class="controls">
+                        <button class="btn" id="exploreBtn">
+                            <i class="fas fa-compass"></i> Explore Messages
+                        </button>
+                        <button class="btn" id="fireworksBtn">
+                            <i class="fas fa-fire"></i> Anniversary Fireworks
+                        </button>
+                        <button class="btn" id="surpriseBtn">
+                            <i class="fas fa-surprise"></i> Anniversary Surprise
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Photo Section -->
+                <div class="photo-magic-section">
+                    <h2 class="section-title">Messages Around Our Love 💝</h2>
+                    
+                    <div class="photo-container">
+                        <!-- Central Photo -->
+                        <div class="central-photo-frame">
+                            <div class="central-photo">
+                                <img src="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                                     alt="Our Anniversary" id="mainPhoto">
+                                <div class="photo-overlay">
+                                    <span class="photo-heart">💑</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Surrounding Messages -->
+                        <div class="message-bubble msg-top">
+                            <div class="bubble-content">
+                                <span class="bubble-emoji">💑</span>
+                                <p class="bubble-text" id="topMsg">Three years of pure bliss!</p>
+                            </div>
+                            <div class="bubble-tail"></div>
+                        </div>
+
+                        <div class="message-bubble msg-right">
+                            <div class="bubble-content">
+                                <span class="bubble-emoji">💍</span>
+                                <p class="bubble-text" id="rightMsg">My forever partner!</p>
+                            </div>
+                            <div class="bubble-tail"></div>
+                        </div>
+
+                        <div class="message-bubble msg-bottom">
+                            <div class="bubble-content">
+                                <span class="bubble-emoji">🏡</span>
+                                <p class="bubble-text" id="bottomMsg">Building our home together!</p>
+                            </div>
+                            <div class="bubble-tail"></div>
+                        </div>
+
+                        <div class="message-bubble msg-left">
+                            <div class="bubble-content">
+                                <span class="bubble-emoji">💕</span>
+                                <p class="bubble-text" id="leftMsg">Growing old together!</p>
+                            </div>
+                            <div class="bubble-tail"></div>
+                        </div>
+                    </div>
+
+                    <div class="photo-controls">
+                        <button class="photo-btn" id="refreshMessages">
+                            <i class="fas fa-sync-alt"></i> New Messages
+                        </button>
+                        <button class="photo-btn" id="changePhoto">
+                            <i class="fas fa-camera"></i> Change Photo
+                        </button>
+                        <button class="photo-btn" id="animatePhoto">
+                            <i class="fas fa-magic"></i> Animate
+                        </button>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div style="font-size: 2.5em; margin-bottom: 10px;">80</div>
+                        <div>Loving Messages</div>
+                    </div>
+                    <div class="stat-card">
+                        <div style="font-size: 2.5em; margin-bottom: 10px;">3</div>
+                        <div>Beautiful Years</div>
+                    </div>
+                    <div class="stat-card">
+                        <div style="font-size: 2.5em; margin-bottom: 10px;">∞</div>
+                        <div>Endless Love</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Messages Page -->
+            <div class="page" id="messages">
+                <h2 class="page-title">80 Anniversary Messages 💌</h2>
+                <div class="message-grid" id="messageGrid"></div>
+                <div class="pagination" id="messagePagination"></div>
+            </div>
+
+            <!-- Gallery Page -->
+            <div class="page" id="gallery">
+                <h2 class="page-title">Our Journey Together 📸</h2>
+                <div class="gallery-grid" id="galleryGrid"></div>
+            </div>
+
+            <!-- Memories Page -->
+            <div class="page" id="memories">
+                <h2 class="page-title">Our Love Timeline ⏳</h2>
+                <div class="memory-timeline" id="memoryTimeline"></div>
+            </div>
+
+            <!-- Wishes Page -->
+            <div class="page" id="wishes">
+                <h2 class="page-title">Send Anniversary Wishes 💝</h2>
+                <div class="wish-form">
+                    <div class="form-group">
+                        <label for="wishName"><i class="fas fa-user"></i> Your Name</label>
+                        <input type="text" id="wishName" class="form-control" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="wishMessage"><i class="fas fa-envelope"></i> Your Anniversary Message</label>
+                        <textarea id="wishMessage" class="form-control" placeholder="Write your heartfelt anniversary message..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-heart"></i> Add Some Love</label>
+                        <div style="display: flex; gap: 10px; margin-top: 10px;">
+                            <button class="emoji-btn" data-emoji="💑" style="background: none; border: none; font-size: 1.5em; cursor: pointer;">💑</button>
+                            <button class="emoji-btn" data-emoji="💍" style="background: none; border: none; font-size: 1.5em; cursor: pointer;">💍</button>
+                            <button class="emoji-btn" data-emoji="💖" style="background: none; border: none; font-size: 1.5em; cursor: pointer;">💖</button>
+                            <button class="emoji-btn" data-emoji="🏡" style="background: none; border: none; font-size: 1.5em; cursor: pointer;">🏡</button>
+                            <button class="emoji-btn" data-emoji="✨" style="background: none; border: none; font-size: 1.5em; cursor: pointer;">✨</button>
+                        </div>
+                    </div>
+                    <button class="submit-btn" id="submitWish">
+                        <i class="fas fa-paper-plane"></i> Send Wish with Love
+                    </button>
+                </div>
+            </div>
+
+            <!-- Themes Page -->
+            <div class="page" id="themes">
+                <h2 class="page-title">Choose Your Theme 🎨</h2>
+                <div class="theme-grid" id="themeGrid"></div>
+                
+                <div style="margin-top: 50px; text-align: center;">
+                    <h3 style="margin-bottom: 20px;">Theme Preview</h3>
+                    <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 20px; max-width: 600px; margin: 0 auto;">
+                        <p style="font-size: 1.2em;">This is how your messages will look with the selected theme!</p>
+                        <div style="display: flex; gap: 20px; justify-content: center; margin-top: 20px;">
+                            <button class="btn" id="applyTheme">Apply Theme</button>
+                            <button class="btn" id="randomTheme">Random Theme</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <canvas class="fireworks" id="fireworksCanvas"></canvas>
+    </div>
+
+    <script>
+        // PASSWORD PROTECTION SYSTEM
+        const correctPassword = "15062021"; // Change this to your desired password (DDMMYYYY format)
+        
+        // DOM Elements
+        const passwordProtection = document.getElementById('password-protection');
+        const websiteContent = document.getElementById('website-content');
+        const passwordInput = document.getElementById('password-input');
+        const passwordSubmit = document.getElementById('password-submit');
+        const errorMessage = document.getElementById('error-message');
+        
+        // Focus on password input when page loads
+        window.onload = function() {
+            passwordInput.focus();
+        };
+        
+        // Enter key to submit password
+        passwordInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                checkPassword();
+            }
+        });
+        
+        // Submit button click
+        passwordSubmit.addEventListener('click', checkPassword);
+        
+        function checkPassword() {
+            const enteredPassword = passwordInput.value.trim();
+            
+            if (enteredPassword === correctPassword) {
+                // Correct password - grant access
+                errorMessage.style.display = 'none';
+                
+                // Show success message
+                passwordSubmit.textContent = "Access Granted!";
+                passwordSubmit.style.background = "linear-gradient(45deg, #4CAF50, #8BC34A)";
+                
+                // Fade out password protection
+                passwordProtection.style.opacity = '0';
+                
+                // Show website content after a delay
+                setTimeout(() => {
+                    passwordProtection.style.display = 'none';
+                    websiteContent.style.display = 'block';
+                    
+                    // Initialize website
+                    initializeWebsite();
+                }, 800);
+            } else {
+                // Incorrect password
+                errorMessage.style.display = 'block';
+                
+                // Shake animation for error
+                errorMessage.style.animation = 'none';
+                setTimeout(() => {
+                    errorMessage.style.animation = 'shake 0.5s';
+                }, 10);
+                
+                // Clear input
+                passwordInput.value = '';
+                passwordInput.focus();
+            }
+        }
+
+        // ANNIVERSARY WEBSITE CODE
+        // 80 Anniversary Messages
+        const anniversaryMessages = [
+            "To my amazing partner in life! 🥰",
+            "Three years of pure happiness 🌟",
+            "Every moment with you is precious 🙏",
+            "You're my dream come true 💭",
+            "My heart beats only for you 💓",
+            "Our love gets stronger every year 🌅",
+            "Your laughter is my favorite sound 😄",
+            "I'm so lucky to have you as my partner 🍀",
+            "You make every day magical ✨",
+            "My love for you grows with each passing year 🌱",
+            "You're my happy place 🏡",
+            "Forever isn't long enough with you ⏳",
+            "You're the answer to all my prayers 🙌",
+            "My soulmate, my everything 💫",
+            "You complete me in every way 🧩",
+            "Together forever, always 💞",
+            "You're my greatest adventure 🗺️",
+            "My love, my life, my world 🌍",
+            "You're simply perfect in every way 💎",
+            "I fall for you more every day 🍂",
+            "You're the poetry I never knew how to write ✍️",
+            "My heart found its home in you 🏠",
+            "You're my favorite thought 💭",
+            "With you, every day is special 💘",
+            "You're the missing piece I searched for 🔍",
+            "My love for you is infinite ♾️",
+            "You make my soul dance 💃",
+            "You're my sunshine on cloudy days ☀️",
+            "I cherish every moment with you ⏰",
+            "You're my favorite hello and hardest goodbye 👋",
+            "You have all of me, forever 🎁",
+            "My heart smiles because of you 😊",
+            "You're my once in a lifetime 💫",
+            "I love you more than words can say 💬",
+            "You're my favorite chapter in life's book 📖",
+            "My forever and always 💍",
+            "You're the best thing that ever happened to me 🎯",
+            "I love you to the moon and back 🌙",
+            "You're my happily ever after 👑",
+            "My heart is yours forever 🔐",
+            "You're my favorite person to do life with 🤝",
+            "I choose you every single day ✅",
+            "You're my greatest blessing 🙏",
+            "My love for you knows no bounds 🌊",
+            "You're the melody to my song 🎵",
+            "I'm forever grateful for you 🙇‍♂️",
+            "You're my sweetest dream come true 🛌",
+            "I love you more than yesterday 💕",
+            "You're my perfect imperfection 🎭",
+            "My heart belongs to you 🫀",
+            "You're my anchor in every storm ⚓",
+            "I'm yours in all lifetimes 🔄",
+            "You're my favorite place to be 🗺️",
+            "My love for you is endless ♾️",
+            "You're my greatest treasure 💎",
+            "I love you beyond measure 📏",
+            "You're the light of my life 💡",
+            "My everything, always ❤️",
+            "You're my happy thought 🌈",
+            "I love you more than life 🌿",
+            "You're my favorite adventure 🚀",
+            "My heart beats your name 💓",
+            "You're my forever love 🕊️",
+            "I love you more than stars 🌟",
+            "You're my perfect match 🔥",
+            "My soul recognized yours 👁️",
+            "You're my always and forever 💒",
+            "I love you endlessly 🌊",
+            "You're my dream partner 👰",
+            "My love grows stronger daily 💪",
+            "You're my favorite love story 📚",
+            "I love you beyond words 📝",
+            "You're my heart's keeper 💖",
+            "My love for you is eternal ⏳",
+            "You're my beautiful destiny 🎀",
+            "I love you completely 🎯",
+            "You're my peaceful place 🌴",
+            "My heart chose you 💘",
+            "You're my lifetime love story 📖",
+            "I love you infinitely ♾️",
+            "You're my perfect harmony 🎶",
+            "Three years of pure bliss 💑",
+            "Building our future together 🏗️",
+            "Growing old together gracefully 👵👴",
+            "Our love story keeps getting better 📖"
+        ];
+
+        // Sample Anniversary Gallery Images
+        const galleryImages = [
+            "https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+        ];
+
+        // Memory Timeline Data (Anniversary Edition)
+        const memories = [
+            { date: "First Met", description: "The day our eyes met and my world changed forever ✨", emoji: "👁️" },
+            { date: "First Date", description: "Coffee turned into endless conversations and laughter ☕", emoji: "💑" },
+            { date: "First Anniversary", description: "Celebrating one year of pure happiness 🎉", emoji: "🎂" },
+            { date: "Our Trip Together", description: "Exploring new places with my favorite person 🗺️", emoji: "✈️" },
+            { date: "Second Anniversary", description: "Another year of growing together 🌱", emoji: "💝" },
+            { date: "Third Anniversary", description: "Three years of building our beautiful life 🏡", emoji: "💒" },
+            { date: "Today", description: "Creating more beautiful memories together 💫", emoji: "📅" }
+        ];
+
+        // 20 Unique Anniversary Themes
+        const themes = [
+            { name: "Romantic Sunset", icon: "🌅", color: "#ff6b8b", bg: "#1a0b2e" },
+            { name: "Starry Night", icon: "🌠", color: "#6a5af9", bg: "#0f1020" },
+            { name: "Ocean Love", icon: "🌊", color: "#4ecdc4", bg: "#0a2e38" },
+            { name: "Forest Magic", icon: "🌳", color: "#2ecc71", bg: "#0d2818" },
+            { name: "Rose Garden", icon: "🌹", color: "#e74c3c", bg: "#2c0b1a" },
+            { name: "Golden Glow", icon: "🌟", color: "#f1c40f", bg: "#2d2400" },
+            { name: "Lavender Dreams", icon: "💜", color: "#9b59b6", bg: "#1a0d2e" },
+            { name: "Crystal Clear", icon: "💎", color: "#3498db", bg: "#0c2d41" },
+            { name: "Cherry Blossom", icon: "🌸", color: "#fd79a8", bg: "#2e0b2a" },
+            { name: "Midnight Sky", icon: "🌌", color: "#2c3e50", bg: "#0a0a1a" },
+            { name: "Sunflower Field", icon: "🌻", color: "#f39c12", bg: "#2d1c00" },
+            { name: "Cotton Candy", icon: "🍬", color: "#ff9ff3", bg: "#2e0b2e" },
+            { name: "Emerald Isle", icon: "🏝️", color: "#1dd1a1", bg: "#0c2d24" },
+            { name: "Arctic Aurora", icon: "❄️", color: "#00cec9", bg: "#0a2d2e" },
+            { name: "Velvet Night", icon: "🖤", color: "#341f97", bg: "#0a0a2e" },
+            { name: "Peach Blush", icon: "🍑", color: "#ff9a76", bg: "#2e1a0b" },
+            { name: "Mystical Purple", icon: "🔮", color: "#a29bfe", bg: "#1a0b2e" },
+            { name: "Golden Hour", icon: "⏰", color: "#fdcb6e", bg: "#2d2400" },
+            { name: "Rose Quartz", icon: "💖", color: "#fab1a0", bg: "#2e0b1a" },
+            { name: "Moonlight", icon: "🌙", color: "#dfe6e9", bg: "#1a2d2e" }
+        ];
+
+        let currentPage = 'home';
+        let currentMessagePage = 1;
+        let messagesPerPage = 12;
+        let currentThemeIndex = 0;
+        let submittedWishes = [];
+
+        // Initialize Website (only runs after correct password)
+        function initializeWebsite() {
+            initializeNavigation();
+            initializeMessagesPage();
+            initializeGallery();
+            initializeMemories();
+            initializeThemes();
+            initializePhotoSection();
+            updateAnniversaryTime();
+            setupFireworks();
+            setupProgressBar();
+            setupEventListeners();
+            
+            // Update time every second
+            setInterval(updateAnniversaryTime, 1000);
+        }
+
+        // Photo Section Functionality
+        function initializePhotoSection() {
+            // Update messages with random ones from our list
+            function updateSurroundingMessages() {
+                const positions = ['topMsg', 'rightMsg', 'bottomMsg', 'leftMsg'];
+                
+                positions.forEach(position => {
+                    const randomIndex = Math.floor(Math.random() * anniversaryMessages.length);
+                    const message = anniversaryMessages[randomIndex];
+                    // Take first 40 characters to keep it short
+                    const shortMessage = message.length > 40 ? message.substring(0, 40) + '...' : message;
+                    document.getElementById(position).textContent = shortMessage;
+                });
+                
+                // Add animation
+                gsap.to('.message-bubble', {
+                    scale: 0.8,
+                    duration: 0.3,
+                    yoyo: true,
+                    repeat: 1,
+                    ease: "power2.inOut"
+                });
+                
+                // Create hearts effect
+                createHearts(8);
+            }
+            
+            // Change photo (you can replace with actual image URLs)
+            function changePhoto() {
+                const photoUrls = [
+                    'https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    'https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+                ];
+                
+                const currentIndex = photoUrls.indexOf(document.getElementById('mainPhoto').src);
+                const nextIndex = (currentIndex + 1) % photoUrls.length;
+                
+                // Fade out current image
+                gsap.to('#mainPhoto', {
+                    opacity: 0,
+                    duration: 0.3,
+                    onComplete: () => {
+                        document.getElementById('mainPhoto').src = photoUrls[nextIndex];
+                        // Fade in new image
+                        gsap.to('#mainPhoto', {
+                            opacity: 1,
+                            duration: 0.3
+                        });
+                    }
+                });
+                
+                createFireworks();
+                createHearts(12);
+            }
+            
+            // Animate photo section
+            function animatePhotoSection() {
+                // Animate central photo
+                gsap.to('.central-photo', {
+                    scale: 1.1,
+                    rotation: 5,
+                    duration: 0.5,
+                    yoyo: true,
+                    repeat: 1,
+                    ease: "elastic.out(1, 0.3)"
+                });
+                
+                // Animate message bubbles
+                gsap.to('.message-bubble', {
+                    y: () => Math.random() * 20 - 10,
+                    x: () => Math.random() * 20 - 10,
+                    duration: 0.5,
+                    yoyo: true,
+                    repeat: 2,
+                    stagger: 0.1
+                });
+                
+                // Create sparkles around photo
+                for (let i = 0; i < 15; i++) {
+                    setTimeout(() => {
+                        createFireworks(
+                            Math.random() * 300 + window.innerWidth/2 - 150,
+                            Math.random() * 300 + window.innerHeight/2 - 150
+                        );
+                    }, i * 50);
+                }
+            }
+            
+            // Event Listeners for Photo Section
+            document.getElementById('refreshMessages').addEventListener('click', updateSurroundingMessages);
+            document.getElementById('changePhoto').addEventListener('click', changePhoto);
+            document.getElementById('animatePhoto').addEventListener('click', animatePhotoSection);
+            
+            // Click on photo for surprise
+            document.querySelector('.central-photo').addEventListener('click', () => {
+                createFireworks(window.innerWidth/2, window.innerHeight/2);
+                createHearts(10);
+                updateSurroundingMessages();
+            });
+            
+            // Initialize with random messages
+            updateSurroundingMessages();
+        }
+
+        // Navigation System
+        function initializeNavigation() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const pageId = this.getAttribute('data-page');
+                    navigateToPage(pageId);
+                    
+                    // Close mobile menu if open
+                    document.getElementById('navMenu').classList.remove('active');
+                });
+            });
+
+            // Mobile menu toggle
+            document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+                document.getElementById('navMenu').classList.toggle('active');
+            });
+        }
+
+        function navigateToPage(pageId) {
+            // Hide current page
+            document.querySelector('.page.active').classList.remove('active');
+            document.querySelector('.nav-link.active').classList.remove('active');
+            
+            // Show new page
+            document.getElementById(pageId).classList.add('active');
+            document.querySelector(`[data-page="${pageId}"]`).classList.add('active');
+            
+            currentPage = pageId;
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Create fireworks effect on page change
+            if (pageId !== 'home') {
+                createFireworks(window.innerWidth / 2, 100);
+                createHearts(5);
+            }
+        }
+
+        // Messages Page with Pagination
+        function initializeMessagesPage() {
+            renderMessagesPage();
+            setupPagination();
+        }
+
+        function renderMessagesPage() {
+            const grid = document.getElementById('messageGrid');
+            grid.innerHTML = '';
+            
+            const startIndex = (currentMessagePage - 1) * messagesPerPage;
+            const endIndex = startIndex + messagesPerPage;
+            const pageMessages = anniversaryMessages.slice(startIndex, endIndex);
+            
+            pageMessages.forEach((message, index) => {
+                const messageIndex = startIndex + index + 1;
+                const card = document.createElement('div');
+                card.className = 'message-card';
+                card.innerHTML = `
+                    <div class="message-text">
+                        <span class="emoji">💌</span>
+                        ${message}
+                    </div>
+                    <div class="message-meta">
+                        <span class="message-number">Message ${messageIndex}</span>
+                        <span>Click for hearts! 💖</span>
+                    </div>
+                `;
+                card.addEventListener('click', () => {
+                    createFireworks(card.offsetLeft + 150, card.offsetTop + 100);
+                    createHearts(10);
+                    
+                    // Animate card
+                    gsap.to(card, {
+                        scale: 1.05,
+                        duration: 0.3,
+                        yoyo: true,
+                        repeat: 1
+                    });
+                });
+                grid.appendChild(card);
+            });
+        }
+
+        function setupPagination() {
+            const totalPages = Math.ceil(anniversaryMessages.length / messagesPerPage);
+            const pagination = document.getElementById('messagePagination');
+            pagination.innerHTML = '';
+            
+            for (let i = 1; i <= totalPages; i++) {
+                const btn = document.createElement('button');
+                btn.className = `page-btn ${i === currentMessagePage ? 'active' : ''}`;
+                btn.textContent = i;
+                btn.addEventListener('click', () => {
+                    currentMessagePage = i;
+                    renderMessagesPage();
+                    setupPagination();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+                pagination.appendChild(btn);
+            }
+        }
+
+        // Gallery Page
+        function initializeGallery() {
+            const grid = document.getElementById('galleryGrid');
+            grid.innerHTML = '';
+            
+            galleryImages.forEach((imgSrc, index) => {
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+                item.innerHTML = `
+                    <img src="${imgSrc}" alt="Memory ${index + 1}">
+                    <div class="gallery-overlay">
+                        <div style="font-size: 0.9em;">Memory ${index + 1}</div>
+                        <div style="font-size: 0.8em; opacity: 0.8;">Click to enlarge</div>
+                    </div>
+                `;
+                item.addEventListener('click', () => {
+                    createFireworks(item.offsetLeft + 125, item.offsetTop + 125);
+                    createHearts(8);
+                    
+                    // Simulate lightbox effect
+                    const lightbox = document.createElement('div');
+                    lightbox.style.cssText = `
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0,0,0,0.9);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        z-index: 10000;
+                        cursor: pointer;
+                    `;
+                    lightbox.innerHTML = `
+                        <img src="${imgSrc}" style="max-width: 90%; max-height: 90%; border-radius: 10px;">
+                    `;
+                    lightbox.addEventListener('click', () => lightbox.remove());
+                    document.body.appendChild(lightbox);
+                });
+                grid.appendChild(item);
+            });
+        }
+
+        // Memories Page
+        function initializeMemories() {
+            const timeline = document.getElementById('memoryTimeline');
+            timeline.innerHTML = '';
+            
+            memories.forEach((memory, index) => {
+                const item = document.createElement('div');
+                item.className = 'memory-item';
+                item.innerHTML = `
+                    <div class="memory-date">
+                        <span style="font-size: 1.5em;">${memory.emoji}</span>
+                        ${memory.date}
+                    </div>
+                    <div>${memory.description}</div>
+                `;
+                timeline.appendChild(item);
+            });
+        }
+
+        // Themes Page
+        function initializeThemes() {
+            const grid = document.getElementById('themeGrid');
+            grid.innerHTML = '';
+            
+            themes.forEach((theme, index) => {
+                const card = document.createElement('div');
+                card.className = 'theme-card';
+                card.innerHTML = `
+                    <div class="theme-icon">${theme.icon}</div>
+                    <div>${theme.name}</div>
+                `;
+                card.style.borderColor = theme.color;
+                card.addEventListener('click', () => {
+                    changeTheme(index);
+                });
+                grid.appendChild(card);
+            });
+        }
+
+        // Anniversary Time Calculation
+        function updateAnniversaryTime() {
+            // Set your anniversary date (year, month-1, day)
+            // Example: June 15, 2021
+            const anniversaryDate = new Date(2021, 5, 15);
+            const currentDate = new Date();
+            
+            // Calculate years
+            let years = currentDate.getFullYear() - anniversaryDate.getFullYear();
+            
+            // Adjust if anniversary hasn't occurred this year yet
+            if (currentDate.getMonth() < anniversaryDate.getMonth() || 
+                (currentDate.getMonth() === anniversaryDate.getMonth() && currentDate.getDate() < anniversaryDate.getDate())) {
+                years--;
+            }
+            
+            // Calculate total months
+            let months = years * 12;
+            months += currentDate.getMonth() - anniversaryDate.getMonth();
+            if (currentDate.getDate() < anniversaryDate.getDate()) {
+                months--;
+            }
+            
+            // Calculate total days
+            const timeDiff = currentDate.getTime() - anniversaryDate.getTime();
+            const days = Math.floor(timeDiff / (1000 * 3600 * 24));
+            
+            // Calculate total hours
+            const hours = Math.floor(timeDiff / (1000 * 3600));
+            
+            // Update the display
+            document.getElementById('years').textContent = years;
+            document.getElementById('months').textContent = months;
+            document.getElementById('days').textContent = days.toLocaleString();
+            document.getElementById('hours').textContent = hours.toLocaleString();
+        }
+
+        // Change Theme
+        function changeTheme(themeIndex) {
+            currentThemeIndex = themeIndex;
+            const theme = themes[themeIndex];
+            
+            document.documentElement.style.setProperty('--primary', theme.color);
+            document.documentElement.style.setProperty('--page-bg', theme.bg);
+            
+            gsap.to('body', {
+                duration: 1,
+                background: theme.bg,
+                ease: "power2.inOut"
+            });
+        }
+
+        // Fireworks System
+        function setupFireworks() {
+            const canvas = document.getElementById('fireworksCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+            
+            class Particle {
+                constructor(x, y, color) {
+                    this.x = x;
+                    this.y = y;
+                    this.color = color;
+                    this.velocity = {
+                        x: (Math.random() - 0.5) * 10,
+                        y: (Math.random() - 0.5) * 10
+                    };
+                    this.alpha = 1;
+                    this.decay = Math.random() * 0.02 + 0.01;
+                    this.size = Math.random() * 3 + 1;
+                }
+                
+                update() {
+                    this.velocity.y += 0.05;
+                    this.x += this.velocity.x;
+                    this.y += this.velocity.y;
+                    this.alpha -= this.decay;
+                }
+                
+                draw() {
+                    ctx.save();
+                    ctx.globalAlpha = this.alpha;
+                    ctx.fillStyle = this.color;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.restore();
+                }
+            }
+            
+            let particles = [];
+            
+            function animateFireworks() {
+                requestAnimationFrame(animateFireworks);
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                particles.forEach((particle, index) => {
+                    if (particle.alpha <= 0) {
+                        particles.splice(index, 1);
+                    } else {
+                        particle.update();
+                        particle.draw();
+                    }
+                });
+            }
+            
+            animateFireworks();
+            
+            window.createFireworks = function(x, y) {
+                const colors = ['#ff6b8b', '#6a5af9', '#4ecdc4', '#f1c40f', '#9b59b6'];
+                const particleCount = 100;
+                
+                for (let i = 0; i < particleCount; i++) {
+                    particles.push(new Particle(x, y, colors[Math.floor(Math.random() * colors.length)]));
+                }
+                
+                createHearts(15);
+            };
+        }
+
+        // Create Floating Hearts
+        function createHearts(count) {
+            for (let i = 0; i < count; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '💖';
+                heart.style.left = `${Math.random() * 100}vw`;
+                heart.style.fontSize = `${Math.random() * 2 + 1}em`;
+                heart.style.animationDelay = `${Math.random() * 2}s`;
+                
+                document.body.appendChild(heart);
+                
+                setTimeout(() => {
+                    heart.remove();
+                }, 3000);
+            }
+        }
+
+        // Progress Bar
+        function setupProgressBar() {
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.getElementById('progressBar').style.transform = `scaleX(${scrolled / 100})`;
+            });
+        }
+
+        // Event Listeners
+        function setupEventListeners() {
+            // Explore Messages Button
+            document.getElementById('exploreBtn').addEventListener('click', function() {
+                navigateToPage('messages');
+                createFireworks(window.innerWidth / 2, 200);
+                createHearts(20);
+            });
+
+            // Fireworks Button
+            document.getElementById('fireworksBtn').addEventListener('click', function() {
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => {
+                        createFireworks(
+                            Math.random() * window.innerWidth,
+                            Math.random() * window.innerHeight * 0.5
+                        );
+                    }, i * 200);
+                }
+                createHearts(30);
+            });
+
+            // Surprise Button
+            document.getElementById('surpriseBtn').addEventListener('click', function() {
+                // Random action
+                const actions = [
+                    () => navigateToPage('messages'),
+                    () => navigateToPage('gallery'),
+                    () => navigateToPage('memories'),
+                    () => changeTheme(Math.floor(Math.random() * themes.length)),
+                    () => {
+                        for (let i = 0; i < 10; i++) {
+                            setTimeout(() => createFireworks(), i * 100);
+                        }
+                    }
+                ];
+                
+                const randomAction = actions[Math.floor(Math.random() * actions.length)];
+                randomAction();
+                createHearts(15);
+            });
+
+            // Apply Theme Button
+            document.getElementById('applyTheme').addEventListener('click', function() {
+                changeTheme(currentThemeIndex);
+                createFireworks(window.innerWidth / 2, window.innerHeight / 2);
+            });
+
+            // Random Theme Button
+            document.getElementById('randomTheme').addEventListener('click', function() {
+                const randomIndex = Math.floor(Math.random() * themes.length);
+                changeTheme(randomIndex);
+                createFireworks(window.innerWidth / 2, window.innerHeight / 2);
+                createHearts(10);
+            });
+
+            // Emoji buttons for wish form
+            document.querySelectorAll('.emoji-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const textarea = document.getElementById('wishMessage');
+                    textarea.value += this.getAttribute('data-emoji');
+                    textarea.focus();
+                });
+            });
+
+            // Submit Wish Button
+            document.getElementById('submitWish').addEventListener('click', function() {
+                const name = document.getElementById('wishName').value.trim();
+                const message = document.getElementById('wishMessage').value.trim();
+                
+                if (!name || !message) {
+                    alert('Please fill in both name and message!');
+                    return;
+                }
+                
+                submittedWishes.push({
+                    name: name,
+                    message: message,
+                    date: new Date().toLocaleDateString()
+                });
+                
+                // Clear form
+                document.getElementById('wishName').value = '';
+                document.getElementById('wishMessage').value = '';
+                
+                // Show success effect
+                createFireworks(window.innerWidth / 2, window.innerHeight / 2);
+                createHearts(20);
+                
+                alert('Your anniversary wish has been sent with love! 💖');
+            });
+        }
+    </script>
+</body>
+</html>
